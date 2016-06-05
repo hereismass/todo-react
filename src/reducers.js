@@ -1,4 +1,4 @@
-import { ADD_TASK, TOGGLE_TASK, REMOVE_TASK, ALL_TASKS_DONE } from './actions'
+import { ADD_TASK, TOGGLE_TASK, ALL_TASKS_DONE } from './actions'
 
 //initial state
 const initialState = {
@@ -30,7 +30,7 @@ export default function todoApp(state = initialState, action) {
           return task;
         })
       });
-    case REMOVE_TASK:
+    /*case REMOVE_TASK:
       return Object.assign({}, state, {
         tasks: state.tasks.filter((task) => {
           if(task.id === action.id) {
@@ -40,7 +40,7 @@ export default function todoApp(state = initialState, action) {
         }).map((task) => {
           return task;
         })
-      });
+      });*/
     case ALL_TASKS_DONE:
     return Object.assign({}, state, {
       tasks: state.tasks.map((task) => {
