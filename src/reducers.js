@@ -1,4 +1,4 @@
-import { ADD_TASK, TOGGLE_TASK, REMOVE_TASK } from './actions'
+import { ADD_TASK, TOGGLE_TASK, REMOVE_TASK, ALL_TASKS_DONE } from './actions'
 
 //initial state
 const initialState = {
@@ -41,6 +41,14 @@ export default function todoApp(state = initialState, action) {
           return task;
         })
       });
+    case ALL_TASKS_DONE:
+    return Object.assign({}, state, {
+      tasks: state.tasks.map((task) => {
+        return Object.assign({}, task, {
+          done: true
+        });
+      })
+    });
     default:
       return state;
   }

@@ -3,6 +3,7 @@
 export const ADD_TASK = 'ADD_TASK';
 export const TOGGLE_TASK = 'TOGGLE_TASK';
 export const REMOVE_TASK = 'REMOVE_TASK';
+export const ALL_TASKS_DONE = 'ALL_TASKS_DONE';
 
 // action creators
 
@@ -23,4 +24,7 @@ export function removeTask(id){
   return {type : REMOVE_TASK, id};
 }
 
-// mark all todo
+// mark all
+export function allTasksDone(){
+  return {type: ALL_TASKS_DONE};
+}

@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { toggleTask } from '../actions';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 import Task from './Task';
 
 //List of tasks shown. tasks given + callback for click
@@ -32,7 +32,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-//listener for dispatch in Task 
+//listener for dispatch in Task
 const mapDispatchToProps = (dispatch) => {
   return {
     onTaskClick: (id) => {
