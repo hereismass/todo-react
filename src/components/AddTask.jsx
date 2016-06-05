@@ -5,7 +5,7 @@ import { addTask } from '../actions';
 //Part for adding a task. dispatch from redux
 let AddTask = ({ dispatch }) => {
   let input;
-  return <div className="addtask">
+  return <div className="task-add">
       <input type="text" placeholder="Things I should do next..." ref={node => {input = node}}/>
       <a href="#" onClick={() => {
         //addTask added if value in input not empty
@@ -14,7 +14,7 @@ let AddTask = ({ dispatch }) => {
           //we remove the value from the input
           input.value = '';
         }
-      }}>Add Task</a>
+      }}><i className="fa fa-plus-square-o" aria-hidden="true"></i></a>
     </div>;
 }
 

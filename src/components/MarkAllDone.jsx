@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 
 //MarkAllDone, link to mark all tasks done
 const MarkAllDone = ({ onClick }) => (
-  <a href="#" onClick={onClick}>Mark all as finished</a>
+  <div className="tasks-alldone">
+    <a href="#" onClick={onClick}>Mark all as finished <i className="fa fa-check-circle" aria-hidden="true"></i></a>
+  </div>
 )
 
 //validation of arguments

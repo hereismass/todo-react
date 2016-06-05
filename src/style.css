@@ -1,3 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+html{
+	height:100%;
+}
+
 body{
-  background: pink;
+  background: #ebeeef;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  color:#37515e;
+}
+
+#app{
+  width:1200px;
+  margin: auto;
+  padding: 20px 30px;
+}
+
+a{
+  text-decoration: none;
+}
+
+hr{
+  height:0px;
+  border-top: 1px solid #c3cbcf;
+}
+
+.tasks-alldone{
+  text-align: right;
+}
+
+.tasks-alldone a{
+  color:#35ba67;
+  font-size:24px;
+}
+
+h1{
+  font-size: 36px;
+  text-align: left;
+  font-weight: 300;
+}
+
+ul{
+  padding:0;
+}
+
+ul li{
+  position: relative;
+  list-style: none;
+  border:1px solid #c3cbcf;
+  background-color: #FFF;
+  font-size: 24px;
+  height:80px;
+  line-height: 72px;
+  padding: 0 30px;
+}
+
+.task-check{
+  position: absolute;
+  right:20px;
+  top:15px;
+  height:48px;
+  width:48px;
+  border:1px solid #c3cbcf;
+  border-radius: 24px;
+  line-height: 46px;
+  text-align: center;
+  color: #c3cbcf;
+}
+
+.task-finished .task-check{
+  color:#FFF;
+  background-color: #35ba67;
+  border-color: #309857;
+}
+
+.task-add{
+
+}
+.task-add input{
+  float:left;
+  font-size: 36px;
+  font-weight: 300;
+  height:86px;
+  border:0;
+  appearance:none;
+  background: transparent;
+  width:48%;
+}
+.task-add input::placeholder{
+  color:#37515e;
+}
+
+.task-add a{
+  color:#9e2ccd;
+  font-size: 72px;
 }

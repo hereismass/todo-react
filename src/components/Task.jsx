@@ -5,6 +5,9 @@ import React, { PropTypes } from 'react';
 const Task = ({ onClick, done, title }) => (
   <li className={done ? "task-finished" : "task-unfinished"} onClick={onClick}>
     {title}
+    <div className="task-check">
+      <i className="fa fa-check" aria-hidden="true"></i>
+    </div>
   </li>
 )
 
