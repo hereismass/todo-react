@@ -1,4 +1,6 @@
 import React from 'react';
+import Task from './Task';
+import AddTask from './AddTask';
 
 export default React.createClass({
   getTasks: function(){
@@ -6,11 +8,15 @@ export default React.createClass({
   },
   render: function(){
     return <div className="todo">
+      <a href="#" onClick="">Mark all as finished</a>
+      <hr/>
+      <h1>Things I need to do...</h1>
       <ul>
-      {this.getTasks().map(task =>
-        <li className={task.done ? "task-finished" : "task-unfinished"}>{task.title}</li>
-      )}
+        {this.getTasks().map(task =>
+          <Task task={task} key={task.title} />
+        )}
       </ul>
+      <AddTask />
     </div>;
   }
 });
