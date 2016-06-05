@@ -1,3 +1,4 @@
+/* border box everywhere*/
 * {
   box-sizing: border-box;
 }
@@ -11,6 +12,8 @@ body{
   font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
   color:#37515e;
 }
+
+/* - - - - - MAIN CODE - - - - - */
 
 #app{
   width:1200px;
@@ -54,9 +57,14 @@ ul li{
   font-size: 24px;
   height:80px;
   line-height: 72px;
-  padding: 0 30px;
+  padding: 0 80px 0 20px;
+  width:100%;
+  text-overflow: ellipsis; /* handling text too long */
+  overflow:hidden;
+  white-space: nowrap;
 }
 
+/* checkbox */
 .task-check{
   position: absolute;
   right:20px;
@@ -68,6 +76,9 @@ ul li{
   line-height: 46px;
   text-align: center;
   color: #c3cbcf;
+}
+.task-finished{
+  color:#c3cbcf;
 }
 
 .task-finished .task-check{
@@ -88,6 +99,10 @@ ul li{
   appearance:none;
   background: transparent;
   width:48%;
+  margin-right: 10px;
+}
+.task-add input:focus{
+  outline: none;
 }
 .task-add input::placeholder{
   color:#37515e;
@@ -96,4 +111,104 @@ ul li{
 .task-add a{
   color:#9e2ccd;
   font-size: 72px;
+}
+
+/* - - - - - - MEDIA QUERIES - - - - - */
+
+/* special query for all medias except mobile : width > 767 */
+@media (min-width: 768px) {
+  ul li{
+    width:50%;
+  }
+  /* even items are on the right */
+  ul li:nth-child(even){
+    margin-left: 50%;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: 0 -1px 0px #c3cbcf, 0 1px 0 #c3cbcf; /* trick to align to border top/bottom with the previous item */
+    position: relative;
+    left: -1px;/* trick to align to border left with the center*/
+    height:78px;
+    line-height: 70px;
+  }
+
+  /* little array on each item */
+  ul li:nth-child(even):before{
+    font-family: FontAwesome;
+    content: "\f0da";
+    position: absolute;
+    left:0;
+    color:#c3cbcf;
+  }
+  ul li:nth-child(odd):before{
+    font-family: FontAwesome;
+    content: "\f0d9";
+    position: absolute;
+    right:0;
+    color:#c3cbcf;
+  }
+}
+
+/* small desktops */
+@media (max-width: 1250px) {
+  #app{
+    width:950px;
+  }
+}
+
+/* tablets */
+@media (max-width: 991px) {
+  #app{
+    width:100%;
+  }
+  .task-add{
+    display: flex;
+  }
+  .task-add input{
+    flex:2;
+  }
+}
+
+/* smartphones */
+@media (max-width: 767px) {
+  #app{
+    padding: 20px;
+  }
+  ul li{
+    border-top: none;
+  }
+  ul li:first-child{
+    border-top: 1px solid #c3cbcf;
+  }
+
+  /* we reduce font sizes */
+  h1{
+    font-size: 24px;
+  }
+  .tasks-alldone a{
+    font-size:18px;
+  }
+  ul li{
+    font-size: 18px;
+  }
+  .task-add input{
+    font-size: 24px;
+  }
+}
+
+/* small smartphones */
+@media (max-width: 380px) {
+  /* we reduce font sizes again */
+  h1{
+    font-size: 20px;
+  }
+  .tasks-alldone a{
+    font-size:16px;
+  }
+  ul li{
+    font-size: 16px;
+  }
+  .task-add input{
+    font-size: 20px;
+  }
 }
