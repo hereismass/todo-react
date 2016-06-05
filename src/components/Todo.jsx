@@ -1,21 +1,15 @@
 import React from 'react';
-import Task from './Task';
+import TaskList from './TaskList';
 import AddTask from './AddTask';
+//import MarkAllDone from './MarkAllDone';
 
+//main 'App' wit the different elements
 export default React.createClass({
-  getTasks: function(){
-    return this.props.tasks || [];
-  },
   render: function(){
     return <div className="todo">
-      <a href="#" onClick="">Mark all as finished</a>
       <hr/>
       <h1>Things I need to do...</h1>
-      <ul>
-        {this.getTasks().map(task =>
-          <Task task={task} key={task.title} />
-        )}
-      </ul>
+      <TaskList />
       <AddTask />
     </div>;
   }

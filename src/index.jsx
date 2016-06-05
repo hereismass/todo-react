@@ -1,17 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import todoApp from './reducers';
 import Todo from './components/Todo';
 
-//initial tasks
-const tasks = [{
-  title:"Start a todo list",
-  done:true
-},{
-  title:"Feed the dog",
-  done:false
-}];
+//we create the redux store
+let store = createStore(todoApp);
 
 ReactDOM.render(
-  <Todo tasks={tasks} />,
+  <Provider store={store}>
+    <Todo />
+  </Provider>,
   document.getElementById('app')
 );

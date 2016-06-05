@@ -14,14 +14,15 @@ export default function todoApp(state = initialState, action) {
           ...state.tasks,
           {
             title: action.title,
-            done: false
+            done: false,
+            id: action.id
           }
         ]
       });
     case TOGGLE_TASK:
       return Object.assign({}, state, {
-        tasks: state.tasks.map((task, index) => {
-          if(index === action.index) {
+        tasks: state.tasks.map((task) => {
+          if(task.id === action.id) {
             return Object.assign({}, task, {
               done: !task.done
             });
@@ -31,14 +32,14 @@ export default function todoApp(state = initialState, action) {
       });
     case REMOVE_TASK:
       return Object.assign({}, state, {
-        tasks: state.tasks.filter((task, index) => {
-          if(index === action.index) {
+        tasks: state.tasks.filter((task) => {
+          if(task.id === action.id) {
             return false;
           }
           return true;
         }).map((task) => {
           return task;
-        });
+        })
       });
     default:
       return state;

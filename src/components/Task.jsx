@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-export default React.createClass({
-  render: function(){
-    return <li className={this.props.task.done ? "task-finished" : "task-unfinished"}>{this.props.task.title}</li>;
-  }
-});
+
+//Task class with task values + callback for click
+const Task = ({ onClick, done, title }) => (
+  <li className={done ? "task-finished" : "task-unfinished"} onClick={onClick}>
+    {title}
+  </li>
+)
+
+//argument validation
+Task.propTypes = {
+  onClick : PropTypes.func.isRequired,
+  done: PropTypes.bool.isRequired,
+  title: PropTypes.string.isRequired
+}
+
+export default Task;
