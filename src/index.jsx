@@ -5,6 +5,9 @@ import { createStore } from 'redux';
 import todoApp from './reducers';
 import Todo from './components/Todo';
 
+//style
+require('./style.css');
+
 //we create the redux store
 let store = createStore(todoApp);
 
