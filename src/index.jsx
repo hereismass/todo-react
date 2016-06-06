@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { compose, createStore } from 'redux';
-import persistState from 'redux-localstorage';
 import todoApp from './reducers';
 import Todo from './components/Todo';
 
