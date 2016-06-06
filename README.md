@@ -15,6 +15,7 @@ and then
 ```
 webpack-dev-server
 ```
+You should be able to access the app on `http://localhost:8080`
 
 If you want to launch the tests, you can run:
 ```
